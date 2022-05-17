@@ -55,7 +55,7 @@ connectivity between the VM) - OK
 - Choose Install or upgrade
 - Skip – Next – Next – Next – Basic storage devices – Next – Reinitialize all – Hostname(you can choose any name – let’s use 
 SERVER) – Time zone: Africa/Kigali - Next 
-- Root password: AUCA@2020 (Unless noted otherwise) Root is a 
+- Root password: auca@2020 (Unless noted otherwise) Root is a 
 Linux super-user somewhat like the administrator.
 - Type of installation, choose Create custom layout
 - Please select a device – click on Free under Hard drives –
@@ -68,12 +68,12 @@ virtualbox RAM of 512 as we did, then size will be equal to (1024) – OK – Ne
 Default installation, Choose Desktop – Next – Wait.
 - Reboot – Forward – Forward – Forward – Forward – Create user, 
 Username write: Pattus(you can change it to whoever you want), 
-Password: AUCA@2020(it’s not ideal to use same passwords in 
+Password: auca@2020(it’s not ideal to use same passwords in 
 physical world but for the sake of remembering all these 
 passwords, I strongly recommend 1 password throughout this 
-project: AUCA@2020) – Forward – Forward – OK – Finish
+project: auca@2020) – Forward – Forward – OK – Finish
 - Login as Other – username, write: root – password, write: 
-AUCA@2020
+auca@2020
 - Tick Do not show me this again – close – right click (not left 
 click) on two computer icon on the left top corner of the screen 
 – Edit connections – choose System eth0 – Edit – Tick connect 
@@ -115,9 +115,9 @@ directory we specified, the whole command looks like this cd
 whole command looks like this rpm –ivh deltarpm-3.5-
 0.5.20090913git.el6.i686.rpm
 - `rpm –ivh python-deltar(press TAB)` This is also installing 
-command, whole command looks like this rpm –ivh python-deltarpm-3.5-0.5.20090913git.el6.i686.rpm */
+command, whole command looks like this rpm –ivh python-deltarpm-3.5-0.5.20090913git.el6.i686.rpm 
 - `rpm –ivh createrepo(press TAB)` This also installs that 
-service, the whole command looks like this rpm –ivh createrepo-0.9.8-4.el6.noarch.rpm */
+service, the whole command looks like this rpm –ivh createrepo-0.9.8-4.el6.noarch.rpm 
 - `createrepo –v /2022/` This create a repository of 2680 items, 
 so wait till it’s done
 - `vim /etc/yum.repos.d/Pattus.repo` This opens a file to add 
@@ -142,6 +142,7 @@ have or created, this certainly excludes 2022.
  wq
  ```
  _( w means save and q means quit)_
+ _press ENTER key_
  
  - `yum repolist` This loads the installed repository, if 
 the number is equal to 2679, good, if not don’t worry 
@@ -233,7 +234,8 @@ subnet 192.168.10.0 netmask 255.255.255.0 {
     max-lease-time 7200;
 }
 ```
-![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
+![Linux Server DHCP Conf.](https://github.com/pattusdev/Network-Virtualisation-DHCP-Telnet-SSH-FTP-SAMBA-/blob/main/images/Capture.JPG)
+
 - `service dhcpd start` This starts our dynamic host 
 configuration protocol service and the output must be 
 [OK] if it’s [FAILED] means you have to troubleshoot. 
@@ -244,4 +246,184 @@ mistake is, good luck!
 - `chkconfig dhcpd on` This ensures that every time RHEL 
 server is powered on, service dhcpd is started 
 automatically, ain’t a fan of powering off, I’m more of 
-save machine state guy
+save machine state guy.
+
+### REDHAT SERVER TELNET CONFIGURATION COMMANDS
+
+Telnet allows us to access the terminal/prompt or shell whatever 
+name you use of a telneted machine. If you telnet 192.168.10.2 from 
+windows XP, that means that you will access the shell/terminal of 
+redhat server in this particular network we are building. As always 
+commands are written in `bold like this`. Let’s go.
+
+- `rpm –qa telnet` This is to check if telnet is installed, if it 
+is you get its version, if not you install it using this command 
+yum install telnet –y you get complete! Message, if it refuse, 
+use the manual way we did earlier.
+- `rpm –qa telnet-server` This is to check if telnet-server is 
+installed, if it is you get its version, if not you install it 
+using this command yum install telnet-server –y you get complete! 
+Message, if it refuse, use the manual way we did earlier.
+- `rpm –qa xinetd ` This is to check if xinetd is installed, if 
+it is you get its version, if not you install it using this 
+command yum install xinetd –y you get complete! Message, if it 
+refuse, use the manual way we did earlier.
+- `cd /2022` This changes directory to 2022 
+- `vim /etc/xinetd.d/telnet` This is to open configuration of 
+telnet 
+
+ _First press **i** to be able to insert anything._
+ _Write:_
+```
+disable = no
+```
+ _then press ESC key_
+ _hold shift+semi colon_
+ _write:_ 
+ ```
+ wq
+ ```
+_press ENTER key_
+- `service xinetd start` This starts our telnet service you must 
+get [OK] if not troubleshoot.
+- `setup` This allows us to access firewall configuration dialog 
+box to turn it off. Choose Firewall configuration – space (to remove the star which enables firewall) – TAB key – OK – Yes -
+TAB key – Quit
+- `useradd Pattus`This is the command to create users which will 
+use our telnet service, the name Pattus can be replaced by any 
+name you want or as it is specified per instruction 
+- `passwd Pattus` This prompts to password setting, it’s not by 
+any means the password 
+- `auca@2020` This is the password we’ve been using it is written 
+as the system prompts for password, as you type nothing happens, 
+this is security measure common in Linux OS.
+
+### REDHAT SERVER SECURE SHELL (SSH) CONFIGURATION
+Telnet although that useful have one simple problem, it transmits 
+commands as text which aren’t encrypted, so if anyone is using 
+softwares like wireshark can sniff on your network and steal 
+passwords and info. (Cybersecurity, my dream field). SSH, solves 
+this problem as it transmits encrypted commands and passwords hence 
+more secure but functionality is same as telnet. SSH is built-in, we 
+don’t have to anything but check that it’s working. As of now, I 
+won’t explain the commands unless it’s new one, you’ve become 
+familiar. Let’s go!
+- `rpm –qa openssh` Whatever is not installed you install it
+- `rpm –qa xinetd`
+- `rpm -qa rpcbind` if it’s not installed, you install this by yum 
+install portmap –y 
+- `service sshd status` To check if they are working, you get 
+output “... is running”. If it is stopped type service sshd 
+start 
+- `service xinetd status`
+- `service rpcbind status`
+- `chkconfig sshd on`
+- `chkconfig rpcbind on`
+
+### REDHAT SERVER SAMBA CONFIGURATION
+File and resources sharing irrespective of OS is made possible by 
+samba services. Here we are going to share a directory named share
+across our network seamlessly even though we are different OS. 
+Let’s go!!
+- `rpm –qa samba`
+- `rpm –qa samba-common`
+- `rpm –qa samba-winbind`
+- `rpm –qa samba-winbind-clients`
+- `mkdir /share/`
+- `cd /`
+- `ls`
+- `ls –ldZ /share/`
+- `chmod 777 /share/` 
+- `chcon –t samba_share_t share`
+- `ls –ldZ /share/` You should get output like this “ drwxrwxrwx. 
+root root unconfined_u:object_r:samba_share_t:s0 /share/ ”
+- `smbpasswd –a Pattus` This is to add our user we created 
+earlier in telnet on users allowed to user samba, if you want 
+you can create other users right now using the command useradd
+
+- `auca@2020` if it prompts you to create password, you should get 
+message saying Added user Pattus 
+- `Pdbedit –L`  To check a list of samba users 
+- `vim /etc/samba/smb.conf`  to open samba configuration file
+_press shift+g to go to the bottom of the 
+file_
+_press **i** to insert anything_
+_remove all the semi colon on the last 7 
+lines_
+_the file looks like this:_
+```
+; [public]
+; comment =Public stuff
+; path =home/samba
+; public =yes
+; writable =yes
+; printable =no
+; write list =+staff
+```
+_It should be edited to look like this and 
+the lines which aren’t there must be added:_
+```
+[share]
+comment =domain stuff
+path =/share
+public =no
+writable =yes
+printable =no
+write list =+staff
+valid users =Pattus
+hosts allow =192.168.10.
+```
+ _then press ESC key_
+ _hold shift+semi colon_
+ _write:_ 
+ ```
+ wq
+ ```
+_press ENTER key_
+
+- `testparm` This is to see if our configured file info is 
+recognized by the system you should first see message saying 
+“Loaded services file OK” press ENTER key to see all 
+- `service smb start`
+- `service nmb start`
+- `chkconfig smb on`
+- `chkconfig nmb start`
+
+### REDHAT SERVER FILE TRANSFER PROTOL (FTP) CONFIGURATION
+As its name explains it transfers files throughout the network. 
+It commonly uses port 21 but it may vary. Let’s go!
+- `mount /dev/cdrom /mnt` This is a command to mount the Red Hat CD 
+you first insert it via devices – optical drives – you know the 
+drill... . The output should be like this “mount: block 
+device...” 
+- `df –h`
+- `yum install vsftpd –y` to install very secure file transfer 
+protocol daemon if it’s not installed 
+- `vim /etc/vsftpd/vsftpd.conf`to edit vsftpd configuration file 
+_press Shift key + g to go to the end of 
+file_
+_press i to insert anything_
+_write:_
+``` 
+userlist_deny=NO
+``` 
+_(to make a list of 
+authorized users)_
+ _then press ESC key_
+ _hold shift+semi colon_
+ _write:_ 
+ ```
+ wq
+ ```
+_press ENTER key_
+
+- `vim /etc/vsftpd/user_list` To add authorized users on ftp user 
+list – press i to insert – write the names of users authorized to 
+use ftp, in this scenario I created only 1 user, under nobody 
+write Pattus – press ESC key – press SHIFT key + semi colon –
+write, wq – Press ENTER key. 
+- `getsebool –a | grep ftp` To check if SElinux is configured or 
+not to allow upload/download in user’s home directory 
+- `setsebool ftp_home_dir=on` If SELinux is configured to allow 
+upload/download use this command to allow it. 
+- `service vsftpd start`
