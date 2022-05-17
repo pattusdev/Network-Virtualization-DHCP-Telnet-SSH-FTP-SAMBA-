@@ -233,6 +233,7 @@ subnet 192.168.10.0 netmask 255.255.255.0 {
     max-lease-time 7200;
 }
 ```
+![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
 - `service dhcpd start` This starts our dynamic host 
 configuration protocol service and the output must be 
 [OK] if it’s [FAILED] means you have to troubleshoot. 
