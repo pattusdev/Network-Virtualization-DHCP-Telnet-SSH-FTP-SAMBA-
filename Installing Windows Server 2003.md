@@ -41,7 +41,7 @@ notification, right control is your host key, you can use it
 also when mouse isn’t working as it should),
 - Administrator – auca@2020
 ### Giving window server a static IP
-- Windows Key + R (or Click start – Run) – write: 
+_Windows Key + R (or Click start – Run) – write:_ 
 ```
 ncpa.cpl
 ```
@@ -55,12 +55,12 @@ following IP – IP is `192.168.10.3` – subnet mask is `255.255.255.0`
 devices – insert guest additions cd image – Next – Next –
 Install – Yes – Yes – Continue anyway – Finish – after reboot
 ### Promoting server from member server to domain controller server
-- Windows + R (or Click start-Run)-write: 
+_Windows + R (or Click start-Run)-write:_ 
 ```
 dcpromo
 ```
- – Next(*4) – domain name = 
-chogm.rw – Next(*7) – Finish – Restart now
+_Next(*4) – domain name = 
+chogm.rw – Next(*7) – Finish – Restart now_
 
 ### Installing Exchange Server 2003
 - Control panel – Add/Remove programs – Add/Remove windows 
@@ -71,28 +71,25 @@ click on Internet Information Services(IIS) – details – Tick FTP
 remove disc from virtual drive – devices – optical drive –
 windows server 2003 – OK) – Finish.
 - Devices – remove disc – devices – optical drives – Exchange CD –
-(it prompts a window of exchange server – click EXIT) Windows + 
-R – write: 
+(it prompts a window of exchange server – click EXIT) 
+_Windows + R – write:_ 
 ```
 D:\setup\i386\setup /forestprep
 ``` 
-Clik OK – Next – I 
-agree – Next – wait.
-- If done – Windows + R – write: 
+_Clik OK – Next – I agree – Next – wait._
+_If done – Windows + R – write:_ 
 ```
 D:\setup\i386\setup /domainprep
 ```
-Clcik OK – Next – I agree – OK(window notifying that it’s not 
-secure)
-- If done – Windows + R – write: 
+_Click OK – Next – I agree – OK(window notifying that it’s not 
+secure)_
+_If done – Windows + R – write:_ 
 ```
 D:\setup\i386\setup
 ```
- Click OK – Next –
-... -(Where they require a name with a default name saying First
+_Click OK – Next –
+... -(Where they require a name with a default name saying First Organization type the name of your domain e.g.: chogm) - ...-Finish_
 
-Organization type the name of your domain e.g.: chogm) - ...-
-Finish
 ### Creating active directory for the domain
 - Windows + R: type 
 ```
@@ -133,8 +130,11 @@ near search and back buttons – Entire network – virtualbox
 shared folders - \\vboxsvr – copy the all necessary 
 softwares (Mozilla, VLC, Dropbox, GPMC, Putty...) – paste 
 them in the folder we created named software.
-    * Install GPMC – run GPMC by pressing Windows + R :type
-gpmc.msc – Click on the plus sign on forest till you reach 
+    * Install GPMC – run GPMC by pressing _Windows + R -type:_
+```
+gpmc.msc
+```
+ – Click on the plus sign on forest till you reach 
 
 domain – OUs – right click on student OU – create and link 
 a GPO here – name it MOZILLA – create other GPO for VLC and 
@@ -143,10 +143,10 @@ chogm.rw (domain) – create a GPO on it – name it PUTTY –
 right click on PUTTY GPO – Edit – on computer configuration 
     * click the plus sign on software – right click software 
 package – New – package – on file name write the path don’t 
-browse e.g.: \\server\software\putty - open - assigned – ok 
+browse e.g.: **\\dcserver\software\putty** - open - assigned – ok 
     * on user configuration is the same drill, after writing 
 the path – advanced – deployment tab – assigned – tick 
-install this application at logon – tick basic – OK. For 
+install this applicatfion at logon – tick basic – OK. For 
 all those softwares you want to deploy it’s same drill. 
 When you are done close everything – Windows + R – type: 
 gpupdate /force – if it asks for reboot type Y – while 
@@ -155,3 +155,77 @@ restarting you can see that it’s installing putty software
 type gpupdate /force – if it asks for reboot/logoff type Y 
     * While restarting you can see that it’s installing 
 Mozilla, VLC, Putty,...
+
+### Mapping ‘Quarantine’ automatically
+- My computer – local disk c – create a folder name it 
+Quarantine – share it like we did earlier – go to desktop 
+– create a new text document – type:
+```
+NET USE L: \\DCSERVER\%username%
+NET USE L: \\DCSERVER\Quarantine
+```
+Click file – save as – my computer – windows – SYSVOL –
+sysvol – name it mapdrive.bat (under chogm.rw) – save –
+close – go where you saved mapdrive.bat file – double click 
+on it (notice how it maps itself on the server) – copy it
+Next is to map it across the domain
+_windows + r – type:
+```
+gpmc.msc
+```
+– create a GPO on domain like 
+we did on putty – name it mapdrive – right click on it –
+edit – windows settings – scripts – Logon – show files –
+paste the file you copied (mapdrive.bat)- close – add –
+browse – click on mapdrive.bat – close – close 
+_windows + R – type:_ 
+```
+gpupdate /force
+```
+_This is also Optional Some / not require it depends!_
+
+- Log in XP as registered active directory user (e.g.: 
+Student1) 
+_windows + R – type:_
+```
+gpupdate /force
+```
+– logoff –
+log in as Student1 – my computer - check if it is mapped 
+under network devices on drive L.
+
+### RESTRICTING LOGON HOURS AND DEVICES
+
+- On Windows server 
+_windows + r – type:_
+```
+dsa.msc
+```
+– right click on Pattus – properties – Account tab – logon hours –
+you can permit hours you want and deny those you want.
+- To limit devices used in logging in to the domain – go to 
+active directory like the above example – properties –
+account tab – logon to – write PC1 – click add –
+leave.
+
+### ROAMING PROFILE
+
+- Roaming profile makes data of the user follow him/her 
+whatever device he/she logins to.
+- My computer – local disk c – create a folder name it 
+Roamprofile – share it 
+_windows + r – type:_
+```
+dsa.msc
+```
+– Student1 
+– right click – properties – Profile tab – 
+_write the path:_
+``` 
+\\192.168.10.3\Roamprofile\%username%
+``` 
+_apply – notice how 
+username changes to Student1._ 
+Let me remind you that 
+Student1 is any user you create, you can name the user 
+whatever you want
