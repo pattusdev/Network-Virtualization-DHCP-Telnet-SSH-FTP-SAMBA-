@@ -113,13 +113,13 @@
 
 ### [USEFUL-LINKS!]
 
-> Configure Linux Server With [DHCP-Telnet-SSH-FTP-SAMBA](https://github.com/pattusdev/Network-Virtualization-DHCP-Telnet-SSH-FTP-SAMBA-/blob/4042326a62a84008433626559a650bfffc369423/Readme.md).
+> Configure Linux Server With [DHCP-Telnet-SSH-FTP-SAMBA](https://github.com/pattusdev/Network-Virtualization-DHCP-Telnet-SSH-FTP-SAMBA-/blob/main/Readme.md).
 
 
-> A Quick-Jump to Installing [Windows Server 2003](https://github.com/pattusdev/Network-Virtualization-DHCP-Telnet-SSH-FTP-SAMBA-/blob/07d19d574247f84adecdd9dd0bc3d628bd8a4c82/Windows%20Server%202003.md).
+> A Quick-Jump to Installing [Windows Server 2003](https://github.com/pattusdev/Network-Virtualization-DHCP-Telnet-SSH-FTP-SAMBA-/blob/main/Windows%20Server%202003.md).
 
 
-> Installing Clients Machines [REDHAT CLIENT AND TWO XP CLIENT MACHINES Also Testing!!](https://github.com/pattusdev/Network-Virtualization-DHCP-Telnet-SSH-FTP-SAMBA-/blob/07d19d574247f84adecdd9dd0bc3d628bd8a4c82/RedHat,%20XP%20Client%20Hosts.md).
+> Installing Clients Machines [REDHAT CLIENT AND TWO XP CLIENT MACHINES Also Testing!!](https://github.com/pattusdev/Network-Virtualization-DHCP-Telnet-SSH-FTP-SAMBA-/blob/main/RedHat%2C%20XP%20Client%20Hosts.md).
 
 
-> Check This [Linux Cheat Sheet](https://github.com/pattusdev/Network-Virtualization-DHCP-Telnet-SSH-FTP-SAMBA-/blob/07d19d574247f84adecdd9dd0bc3d628bd8a4c82/Linux-cheat-code.md).
+> Check This [Linux Cheat Sheet](https://github.com/pattusdev/Network-Virtualization-DHCP-Telnet-SSH-FTP-SAMBA-/blob/main/Linux-cheat-code.md).
