@@ -19,7 +19,7 @@ easier to follow this way.
 3. Install Windows XP3
 4. Check if red hat is done, start with the commands, when you 
 reach to `cp * -v /2022` command, check on Windows machine
-5. When you reach on createrepo –v/2022/, Install exchange on 
+5. When you reach on `createrepo –v/2022/`, Install exchange on 
 windows server, while you are waiting for forest preparation 
 to be done, install MS Office on your XPs
 ### Steps of installing virtual box:
