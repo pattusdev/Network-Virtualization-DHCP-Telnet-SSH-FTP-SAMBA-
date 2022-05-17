@@ -236,7 +236,7 @@ whatever you want
 
 ### [USEFUL-LINKS!]
 
-> Configure Linux Server With [DHCP-Telnet-SSH-FTP-SAMBA](https://pages.github.com/](https://github.com/pattusdev/Network-Virtualization-DHCP-Telnet-SSH-FTP-SAMBA-/blob/main/Readme.md)).
+> Configure Linux Server With [DHCP-Telnet-SSH-FTP-SAMBA](https://github.com/pattusdev/Network-Virtualization-DHCP-Telnet-SSH-FTP-SAMBA-/blob/4042326a62a84008433626559a650bfffc369423/Readme.md).
 
 
 > A Quick-Jump to Installing [Windows Server 2003](https://pages.github.com/](https://github.com/pattusdev/Network-Virtualization-DHCP-Telnet-SSH-FTP-SAMBA-/blob/main/Windows%20Server%202003.md)).
