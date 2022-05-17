@@ -443,4 +443,4 @@ upload/download use this command to allow it.
 > Installing Clients Machines [REDHAT CLIENT AND TWO XP CLIENT MACHINES Also Testing!!](https://github.com/pattusdev/Network-Virtualization-DHCP-Telnet-SSH-FTP-SAMBA-/blob/07d19d574247f84adecdd9dd0bc3d628bd8a4c82/RedHat,%20XP%20Client%20Hosts.md).
 
 
-> Check This [Linux Cheat Sheet](https://github.com/pattusdev/Network-Virtualization-DHCP-Telnet-SSH-FTP-SAMBA-/blob/07d19d574247f84adecdd9dd0bc3d628bd8a4c82/Linux-cheat-code.md).
+> Check This [Linux Cheat Sheet](https://github.com/pattusdev/Network-Virtualization-DHCP-Telnet-SSH-FTP-SAMBA-/blob/main/Linux-cheat-code.md).
