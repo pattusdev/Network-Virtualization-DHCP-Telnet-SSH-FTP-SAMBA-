@@ -1,4 +1,4 @@
-### INSTALLING CLIENTS MACHINES: REDHAT CLIENT AND TWO XP CLIENT MACHINES
+### INSTALLING CLIENTS MACHINES: REDHAT CLIENT AND TWO XP CLIENT MACHINES Also Testing!!
 - I know you like easy way but ain’t a fan of cloning so, I
 strongly recommend you install red hat client as we installed red 
 hat server the only difference is on hostname we use client 
