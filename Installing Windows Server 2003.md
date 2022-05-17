@@ -76,19 +76,19 @@ R – write:
 ```
 D:\setup\i386\setup /forestprep
 ``` 
-– OK – Next – I 
+Clik OK – Next – I 
 agree – Next – wait.
 - If done – Windows + R – write: 
 ```
 D:\setup\i386\setup /domainprep
 ```
-– OK – Next – I agree – OK(window notifying that it’s not 
+Clcik OK – Next – I agree – OK(window notifying that it’s not 
 secure)
 - If done – Windows + R – write: 
 ```
 D:\setup\i386\setup
 ```
- – OK – Next –
+ Click OK – Next –
 ... -(Where they require a name with a default name saying First
 
 Organization type the name of your domain e.g.: chogm) - ...-
