@@ -19,7 +19,7 @@ easier to follow this way.
 3. Install Windows XP3
 4. Check if red hat is done, start with the commands, when you 
 reach to `cp * -v /2022` command, check on Windows machine
-5. When you reach on `createrepo –v/2022/`, Install exchange on 
+5. When you reach on `createrepo –v/2022/` Install exchange on 
 windows server, while you are waiting for forest preparation 
 to be done, install MS Office on your XPs
 ### Steps of installing virtual box:
@@ -54,7 +54,7 @@ connectivity between the VM) - OK
 - Start the VM
 - Choose Install or upgrade
 - Skip – Next – Next – Next – Basic storage devices – Next – Reinitialize all – Hostname(you can choose any name – let’s use 
-SERVER) – Time zone: Africa/Kigali - Next 
+DCSERVER) – Time zone: Africa/Kigali - Next 
 - Root password: auca@2020 (Unless noted otherwise) Root is a 
 Linux super-user somewhat like the administrator.
 - Type of installation, choose Create custom layout
