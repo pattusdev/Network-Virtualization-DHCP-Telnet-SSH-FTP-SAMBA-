@@ -56,7 +56,7 @@ o SAMBA
 - `smbclient –L 192.168.10.2 –U Kevin` To list out 
 the samba share on client machine, you will see our 
 folder we shared 
-- `smbclient //192.168.102/share –U Kevin` To access 
+- `smbclient //192.168.10.2/share –U Kevin` To access 
 the samba share 
 After installation of XP :
 - Welcome to Microsoft windows – next – Not right now – next –
