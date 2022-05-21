@@ -343,7 +343,7 @@ you can create other users right now using the command useradd
 
 - `auca@2020` if it prompts you to create password, you should get 
 message saying Added user Pattus 
-- `Pdbedit –L`  To check a list of samba users 
+- `pdbedit –L`  To check a list of samba users 
 - `vim /etc/samba/smb.conf`  to open samba configuration file
 _press shift+g to go to the bottom of the 
 file_
