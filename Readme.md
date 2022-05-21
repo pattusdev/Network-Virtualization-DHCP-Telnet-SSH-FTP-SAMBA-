@@ -88,7 +88,7 @@ them are what they do at least those I know their role.)
 
 > As the domain name or window domain controller name is not yet 
 revealed for our exam, I used those of the project. Domain name as
-jubilee.org and windows domain controller name as server.jubilee.org.
+chogm.rw and windows domain controller name as dcserver.chogm.rw.
 Also the subnet I used is same as that of the project 192.168.10.0/24.
 Linux terminal is case sensitive, so upper case is upper case and 
 lower case is lower case.
@@ -199,7 +199,7 @@ used `192.168.10.0` as subnet IP,
 `192.168.10.2` as Red hat IP, `192.168.10.3` as 
 Windows Server)
     * Option domain-name-servers 
-`server.jubilee.org`;(we type the full name 
+`dcserver.chogm.rw`;(we type the full name 
 of our domain controller, it is composed 
 first by the name of server then the domain 
 name, to know it you open domain controller 
@@ -207,7 +207,7 @@ server and right click my computer –
 properties – computer name – and see where 
 it’s written full computer name, and that’s 
 should be written there.
-    * Option domain-name `“jubilee.org”`;(This is 
+    * Option domain-name `“chogm.rw”`;(This is 
 the domain name, it’s found below the full 
 computer name on domain controller server)
     * Option routers `192.168.10.1` (this is our 
