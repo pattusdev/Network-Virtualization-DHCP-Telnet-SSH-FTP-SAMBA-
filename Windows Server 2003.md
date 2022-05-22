@@ -127,7 +127,7 @@ how the folder now have a hand holding it.
     * On left part click on My network places(if you don’t see it 
 click folders on the second line of taskbar of my computer 
 near search and back buttons – Entire network – virtualbox 
-shared folders - \\vboxsvr – copy the all necessary 
+shared folders - \\\vboxsvr – copy the all necessary 
 softwares (Mozilla, VLC, Dropbox, GPMC, Putty...) – paste 
 them in the folder we created named software.
     * Install GPMC – run GPMC by pressing _Windows + R -type:_
@@ -154,7 +154,7 @@ restarting you can see that it’s installing putty software
     * Log in XP as one of active directory user – windows + R –
 type gpupdate /force – if it asks for reboot/logoff type Y 
     * While restarting you can see that it’s installing 
-Mozilla, VLC, Putty,...
+Mozilla, VLC, Putty, Drop,...
 
 ### Mapping ‘Quarantine’ automatically
 - My computer – local disk c – create a folder name it 
