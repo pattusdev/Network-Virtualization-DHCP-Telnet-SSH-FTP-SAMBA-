@@ -118,7 +118,7 @@ whole command looks like this rpm –ivh deltarpm-3.5-
 command, whole command looks like this rpm –ivh python-deltarpm-3.5-0.5.20090913git.el6.i686.rpm 
 - `rpm –ivh createrepo(press TAB)` This also installs that 
 service, the whole command looks like this rpm –ivh createrepo-0.9.8-4.el6.noarch.rpm 
-- `createrepo –v /2022/` This create a repository of 2680 items, 
+- `createrepo –v /2022/` This create a repository of 2679 items, 
 so wait till it’s done
 - `vim /etc/yum.repos.d/Pattus.repo` This opens a file to add 
 information about our repository and server in general. The name 
