@@ -1,3 +1,7 @@
+# Configure Linux Server Repository For The EXAM -
+<br>
+<br>
+
 - `mkdir /YOURID` We create a directory we’ll be working in – go to 
 devices at the top of the red hat window – Optical drives – Red 
 hat disc image
@@ -17,10 +21,10 @@ command, whole command looks like this rpm –ivh python-deltarpm-3.5-0.5.200909
 service, the whole command looks like this rpm –ivh createrepo-0.9.8-4.el6.noarch.rpm 
 - `createrepo –v /YOURID/` This create a repository of 2679 items, 
 so wait till it’s done
-- `vim /etc/yum.repos.d/THECHOOSENNAME.repo` This opens a file to add 
+- `vim /etc/yum.repos.d/THECHOSENNAME.repo` This opens a file to add 
 information about our repository and server in general. The name 
-Pattus can be changed to anything other than the directories you 
-have or created, this certainly excludes 2022. 
+THECHOSENNAME can be changed to anything other than the directories you 
+have or created, this certainly excludes YOURID. 
 
  
  _First press **i** to be able to insert anything._
@@ -54,7 +58,7 @@ do yum repolist now you should have 2679. If not you
 should do further troubleshooting mainly in the file we 
 edited and check if everything is written as it should, 
 you can access the file by typing this command:
-vim /etc/yum.repos.d/THECHOOSENNAME.repo
+vim /etc/yum.repos.d/THECHOSENNAME.repo
 <br />
 <br />
 <br />
