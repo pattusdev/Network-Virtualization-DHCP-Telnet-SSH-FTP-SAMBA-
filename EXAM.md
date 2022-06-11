@@ -55,3 +55,20 @@ should do further troubleshooting mainly in the file we
 edited and check if everything is written as it should, 
 you can access the file by typing this command:
 vim /etc/yum.repos.d/THECHOOSENNAME.repo
+<br />
+<br />
+<br />
+
+### [USEFUL-LINKS!]
+
+> Configure Linux Server With [DHCP-Telnet-SSH-FTP-SAMBA](https://github.com/pattusdev/Network-Virtualization-DHCP-Telnet-SSH-FTP-SAMBA-/blob/main/Readme.md).
+
+
+> A Quick-Jump to Installing [Windows Server 2003](https://github.com/pattusdev/Network-Virtualization-DHCP-Telnet-SSH-FTP-SAMBA-/blob/main/Windows%20Server%202003.md).
+
+
+> Installing Clients Machines [REDHAT CLIENT AND TWO XP CLIENT MACHINES Also Testing!!](https://github.com/pattusdev/Network-Virtualization-DHCP-Telnet-SSH-FTP-SAMBA-/blob/main/RedHat%2C%20XP%20Client%20Hosts.md).
+
+
+> Check This [Linux Cheat Sheet](https://github.com/pattusdev/Network-Virtualization-DHCP-Telnet-SSH-FTP-SAMBA-/blob/main/Linux-cheat-code.md).
+
