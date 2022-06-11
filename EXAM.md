@@ -30,7 +30,7 @@ have or created, this certainly excludes YOURID.
  _First press **i** to be able to insert anything._
  _Write:_
  ```
- [server] press enter
+ [server] *press enter*
  name= Linux Server
  baseurl=file:///YOURID
  enabled=1
